@@ -7,13 +7,12 @@ MAINTAINER vadim
 RUN \
 	apt-get update && \
 	apt-get -y upgrade && \
-	apt-get -y install nginx && \
-	rm /bin/sh && ln -s /bin/bash /bin/sh
+	apt-get -y install nginx
 	#rm -v /etc/nginx/nginx.conf
 	
 	
 # Copy app to /src
-COPY nginx.conf /etc/nginx/tmp/
+COPY . /etc/nginx/tmp
 
 
 EXPOSE 80
