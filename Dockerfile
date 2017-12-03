@@ -7,19 +7,14 @@ MAINTAINER vadim
 RUN \
 	apt-get update && \
 	apt-get -y upgrade && \
-	apt-get -y install nodejs && \
-	apt-get -y install npm
+	apt-get -y install nginx && \
+	rm -v /etc/nginx/nginx.conf
 	
 	
 # Copy app to /src
-COPY . /src
-
-# Install app and dependencies into /src
-RUN ln -s /usr/bin/nodejs /usr/bin/node && \ 
-     cd /src && \
-	 npm install
+COPY nginx.conf /etc/nginx/nginx.conf
 
 
-EXPOSE 3100
+EXPOSE 80
 
 CMD cd /src && node ./server.js
