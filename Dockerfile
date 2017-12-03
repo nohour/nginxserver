@@ -12,7 +12,7 @@ RUN \
 	
 	
 # Copy app to /src
-COPY . /tmp
+COPY nginx.conf /tmp
 
 
 EXPOSE 80
