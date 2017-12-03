@@ -17,4 +17,4 @@ COPY . /etc/nginx/nginx.conf
 
 EXPOSE 80
 
-CMD cd /src && node ./server.js
+CMD service nginx start
