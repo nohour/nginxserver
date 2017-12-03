@@ -8,13 +8,13 @@ RUN \
 	apt-get update && \
 	apt-get -y upgrade && \
 	apt-get -y install nginx && \
-	rm -v /etc/nginx/nginx.conf
+	#rm -v /etc/nginx/nginx.conf
 	
 	
 # Copy app to /src
-COPY . /etc/nginx/
+COPY . /tmp
 
 
 EXPOSE 80
 
-CMD service nginx start
+CMD  ["nginx", "-c", "/tmp/nginx.conf"]
