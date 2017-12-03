@@ -12,7 +12,7 @@ RUN \
 	
 	
 # Copy app to /src
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY . /etc/nginx/nginx.conf
 
 
 EXPOSE 80
